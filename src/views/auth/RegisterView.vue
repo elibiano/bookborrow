@@ -1,66 +1,46 @@
 <script setup>
-import { ref } from 'vue'
+import AppLayout from '@/components/layout/AppLayout.vue'
+import RegisterForm from '@/components/auth/RegisterForm.vue'
+import { useDisplay } from 'vue'
 
-const theme = ref('light')
-
-function onClick() {
-  theme.value = theme.value === 'light' ? 'dark' : 'light'
-}
+const { mobile } = useDisplay()
 </script>
 
 <template>
-  <v-responsive class="border rounded">
-    <v-app :theme="theme">
-      <v-app-bar class="px-3" color="cyan-lighten-2">
-        <v-spacer></v-spacer>
+  <AppLayout>
+    <template #content>
+      <v-container fluid>
+        <v-row>
+          <v-col cols="12" md="8" class="bg-surface-light h-screen" v-if="!mobile"> </v-col>
+          <v-col cols="12" md="4" :class="mobile ? '' : 'pt-16'">
+            <v-card class="mx-auto" elevation="0" max-width="600">
+              <v-card-title class="text-center">
+                <v-img
+                  class="mx-auto"
+                  src="/public/lbb.png"
+                  :width="mobile ? '75%' : '25%'"
+                ></v-img>
+                <h3 class="font-weight-black">Fabrique</h3>
+                <p class="font-weight-bold">Registration Form</p>
+              </v-card-title>
 
-        <v-btn
-          :prepend-icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
-          text="Toggle Theme"
-          slim
-          @click="onClick"
-        ></v-btn>
-      </v-app-bar>
-
-      <v-main>
-        <v-container>
-          <v-col cols="12" md="6" class="mx-auto">
-            <v-card
-              class="mx-auto"
-              prepend-icon="mdi-book-open-blank-variant"
-              subtitle="Registration Form"
-            >
-              <template v-slot:title>
-                <span class="font-weight-black">Library Book Borrowing</span>
-              </template>
-
-              <v-card-text class="bg-surface-light pt-4">
-                <v-form fast-fail @submit.prevent>
-                  <v-text-field label="First Name" variant="outlined"></v-text-field>
-                  <v-text-field label="Last Name" variant="outlined"></v-text-field>
-                  <v-text-field label="Email" variant="outlined"></v-text-field>
-
-                  <v-text-field label="Password" type="password" variant="outlined"></v-text-field>
-                  <v-text-field
-                    label="Password Confirmation"
-                    type="password"
-                    variant="outlined"
-                  ></v-text-field>
-
-                  <v-btn class="mt-2" type="submit" block>Submit</v-btn>
-                </v-form>
-
+              <v-card-text class="pt-4">
                 <v-divider class="my-5"></v-divider>
 
-                <h5>
-                  Already have account? <RouterLink to="/login">Click here to Login</RouterLink>
+                <RegisterForm> </RegisterForm>
+                <v-divider class="my-5"></v-divider>
+
+                <h5 class="text-center">
+                  Already have account?
+                  <RouterLink class="text-cyan-lighten-2 font-weight-black" to="/"
+                    >Click here to Login</RouterLink
+                  >
                 </h5>
               </v-card-text>
             </v-card>
           </v-col>
-        </v-container>
-      </v-main>
-      <v-footer color="cyan-lighten-2" border app>2025 - Library Book Borrowing</v-footer>
-    </v-app>
-  </v-responsive>
+        </v-row>
+      </v-container>
+    </template>
+  </AppLayout>
 </template>
