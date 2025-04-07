@@ -5,3 +5,5 @@ import { RouterView } from 'vue-router'
 <template>
   <RouterView />
 </template>
+
+<template><link rel="stylesheet" href="/loginview.vue" /></template>
