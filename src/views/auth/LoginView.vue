@@ -11,7 +11,7 @@ function onClick() {
 <template>
   <v-responsive class="border rounded">
     <v-app :theme="theme">
-      <v-app-bar class="px-3" color="teal-lighten-3">
+      <v-app-bar class="px-3" color="cyan-lighten-2">
         <v-spacer></v-spacer>
 
         <v-btn
@@ -42,12 +42,19 @@ function onClick() {
 
                   <v-btn class="mt-2" type="submit" block>Submit</v-btn>
                 </v-form>
+
+                <v-divider class="my-5"></v-divider>
+
+                <h5>
+                  Don't have an account?
+                  <RouterLink to="/register">Click here to Register</RouterLink>
+                </h5>
               </v-card-text>
             </v-card>
           </v-col>
         </v-container>
       </v-main>
-      <v-footer color="teal-lighten-3" border app>2025 - Library Book Borrowing</v-footer>
+      <v-footer color="cyan-lighten-2" border app>2025 - Library Book Borrowing</v-footer>
     </v-app>
   </v-responsive>
 </template>
