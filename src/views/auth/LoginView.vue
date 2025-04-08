@@ -14,7 +14,7 @@ const { mobile } = useDisplay()
           <v-card class="mx-auto" elevation="24">
             <v-card-title class="text-center">
               <v-img class="mx-auto" src="/images/lbb.png" :width="mobile ? '75%' : '25%'"></v-img>
-              <h3 class="font-weight-bold">Shirlix Meatshop</h3>
+              <h3 class="font-weight-bold">Library Book Borrowing</h3>
               <p class="font-weight-bold">Login Form</p>
             </v-card-title>
 
@@ -35,7 +35,9 @@ const { mobile } = useDisplay()
 
               <h5 class="text-center">
                 Don't have account?
-                <RouterLink class="text-primary" to="/register">Click here to Register</RouterLink>
+                <RouterLink class="text-primary" to="/register">
+                  Click here to Register
+                </RouterLink>
               </h5>
             </v-card-text>
           </v-card>
