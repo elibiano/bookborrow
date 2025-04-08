@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from '@/components/layout/AppLayout.vue'
-import LoginForm from '@/components/auth/LoginForm.vue'
+// import LoginForm from '@/components/auth/LoginForm.vue'
 import { useDisplay } from 'vuetify'
 
 const { mobile } = useDisplay()
@@ -13,7 +13,7 @@ const { mobile } = useDisplay()
         <v-col cols="12" md="6" class="mx-auto pt-16">
           <v-card class="mx-auto" elevation="24">
             <v-card-title class="text-center">
-              <v-img class="mx-auto" src="/public/images/lbb.png" width="25%"></v-img>
+              <v-img class="mx-auto" src="/images/lbb.png" :width="mobile ? '75%' : '25%'"></v-img>
               <h3 class="font-weight-bold">Shirlix Meatshop</h3>
               <p class="font-weight-bold">Login Form</p>
             </v-card-title>

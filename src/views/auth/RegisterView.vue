@@ -1,7 +1,7 @@
 <script setup>
 import AppLayout from '@/components/layout/AppLayout.vue'
-import RegisterForm from '@/components/auth/RegisterForm.vue'
-import { useDisplay } from 'vue'
+// import RegisterForm from '@/components/auth/RegisterForm.vue'
+import { useDisplay } from 'vuetify'
 
 const { mobile } = useDisplay()
 </script>
@@ -16,7 +16,7 @@ const { mobile } = useDisplay()
               <v-img
                 class="mx-auto"
                 src="/public/images/lbb.png"
-                width="mobile ? '75%' : '25%'"
+                :width="mobile ? '75%' : '25%'"
               ></v-img>
               <h3 class="font-weight-black">Library Book Borrowing</h3>
               <p class="font-weight-bold">Registration Form</p>
