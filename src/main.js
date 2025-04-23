@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import Dashboard from './views/Dashboard.vue'
+import Dashboard from './views/auth/DashboardView.vue'
 import Books from './views/Books.vue'
 import Borrowings from './views/Borrowings.vue'
 import Submission from './views/Submission.vue'
@@ -18,7 +18,7 @@ const router = createRouter({
     { path: '/borrowings', component: Borrowings },
     { path: '/submission', component: Submission },
     { path: '/about', component: About },
-  ]
+  ],
 })
 
 createApp(App).use(router).mount('#app')
