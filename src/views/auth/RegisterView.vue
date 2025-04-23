@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from '@/components/layout/AppLayout.vue'
-// import RegisterForm from '@/components/auth/RegisterForm.vue'
+import RegisterForm from '@/components/auth/RegisterForm.vue'
 import { useDisplay } from 'vuetify'
 
 const { mobile } = useDisplay()
@@ -39,12 +39,14 @@ const { mobile } = useDisplay()
                 ></v-text-field>
 
                 <v-btn class="mt-2" type="submit" block>Submit</v-btn>
+                <RegisterForm />
               </v-form>
 
               <v-divider class="my-5"></v-divider>
 
               <h5 class="text-center">
-                Already have account?<RouterLink class="text-primary" to="/">
+                Already have account?
+                <RouterLink class="text-primary" to="/">
                   Click here to Login
                 </RouterLink>
               </h5>

@@ -1,30 +1,24 @@
-//import './assets/main.css'
-
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
-// Vuetify
-import '@mdi/font/css/materialdesignicons.css'
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
-
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import router from './router'
+import Dashboard from './views/Dashboard.vue'
+import Books from './views/Books.vue'
+import Borrowings from './views/Borrowings.vue'
+import Submission from './views/Submission.vue'
+import About from './views/About.vue'
+import Login from './views/Login.vue'
 
-const app = createApp(App)
-
-const vuetify = createVuetify({
-  icons: {
-    defaultSet: 'mdi', // This is already the default value - only for display purposes
-  },
-  components,
-  directives,
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/', redirect: '/login' },
+    { path: '/login', component: Login },
+    { path: '/dashboard', component: Dashboard },
+    { path: '/books', component: Books },
+    { path: '/borrowings', component: Borrowings },
+    { path: '/submission', component: Submission },
+    { path: '/about', component: About },
+  ]
 })
 
-app.use(createPinia())
-app.use(router)
-app.use(vuetify)
-
-app.mount('#app')
+createApp(App).use(router).mount('#app')
