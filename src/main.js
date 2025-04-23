@@ -3,10 +3,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import Dashboard from './views/auth/DashboardView.vue'
 import Books from './views/auth/BooksView.vue'
-import Borrowings from './views/auth/Borrowings.vue'
-import Submission from './views/auth/Submission.vue'
-import About from './views/auth/About.vue'
-import Login from './views/auth/Login.vue'
+import Borrowings from './views/auth/BorrowingsView.vue'
+import Submission from './views/auth/SubmissionView.vue'
+import About from './views/auth/AboutView.vue'
+import Login from './views/auth/LoginView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
