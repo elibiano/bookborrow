@@ -34,11 +34,12 @@ const onThemeUpdate = (value) => {
               <v-card-title class="text-center">
                 <v-img
                   class="mx-auto"
-                  src="/images/logo-shop.png"
+                  src="/public/images/lbb.png"
                   :width="mobile ? '75%' : '65%'"
                 ></v-img>
 
-                <h3 class="font-weight-black mt-5">Welcome to Shirlix!</h3>
+                <h3 class="font-weight-black mt-5">LibraryFlow</h3>
+                <h5 class="font-weight-black mt-5">Library Book Borrowing</h5>
               </v-card-title>
 
               <v-card-text class="pt-4">
@@ -50,7 +51,7 @@ const onThemeUpdate = (value) => {
 
                 <h4 class="text-center" v-if="false">
                   Don't have account?
-                  <RouterLink class="text-red-darken-4 font-weight-black" to="/register">
+                  <RouterLink class="cyan-lighten-3 font-weight-black" to="/register">
                     Click here to Register
                   </RouterLink>
                 </h4>

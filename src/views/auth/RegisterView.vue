@@ -50,7 +50,7 @@ const onThemeUpdate = (value) => {
 
                 <h4 class="text-center">
                   Already have account?
-                  <RouterLink class="text-red-darken-4 font-weight-black" to="/">
+                  <RouterLink class="cyan-lighten-3 font-weight-black" to="/">
                     Click here to Login
                   </RouterLink>
                 </h4>
