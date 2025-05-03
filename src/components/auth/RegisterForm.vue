@@ -2,7 +2,7 @@
 import {
   requiredValidator,
   emailValidator,
-  passwordValidator,
+  studentIdValidator,
   confirmedValidator,
 } from '@/utils/validator.js'
 import AlertNotification from '@/components/common/AlertNotification.vue'
@@ -11,7 +11,6 @@ import { ref } from 'vue'
 
 const { formData, formAction, refVForm, onFormSubmit } = useRegister()
 
-const isPasswordVisible = ref(false)
 const isPasswordConfirmVisible = ref(false)
 </script>
 
@@ -50,13 +49,10 @@ const isPasswordConfirmVisible = ref(false)
 
       <v-col cols="12" sm="6">
         <v-text-field
-          v-model="formData.password"
-          prepend-inner-icon="mdi-lock-outline"
-          label="Password"
-          :type="isPasswordVisible ? 'text' : 'password'"
-          :append-inner-icon="isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append-inner="isPasswordVisible = !isPasswordVisible"
-          :rules="[requiredValidator, passwordValidator]"
+          v-model="formData.studentId"
+          prepend-inner-icon="mdi-id-card"
+          label="Student ID"
+          :rules="[requiredValidator, studentIdValidator]"
         ></v-text-field>
       </v-col>
 
