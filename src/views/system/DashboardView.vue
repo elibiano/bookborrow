@@ -1,83 +1,164 @@
-<script>
-import { BookIcon, UsersIcon, ClockIcon } from 'lucide-vue-next'
-
-export default {
-components: {
-BookIcon,
-UsersIcon,
-ClockIcon
-}
-}
-</script>
-
 <template>
-  <div class="space-y-6">
-    <h1 class="text-2xl font-bold text-gray-900">Dashboard</h1>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <div class="flex items-center">
-          <div class="p-3 rounded-full bg-blue-100">
-            <BookIcon class="h-6 w-6 text-blue-600" />
-          </div>
-          <div class="ml-4">
-            <p class="text-sm font-medium text-gray-500">Total Books</p>
-            <p class="text-2xl font-bold text-gray-900">1,234</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-lg shadow">
-        <div class="flex items-center">
-          <div class="p-3 rounded-full bg-green-100">
-            <UsersIcon class="h-6 w-6 text-green-600" />
-          </div>
-          <div class="ml-4">
-            <p class="text-sm font-medium text-gray-500">Active Borrowings</p>
-            <p class="text-2xl font-bold text-gray-900">156</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-lg shadow">
-        <div class="flex items-center">
-          <div class="p-3 rounded-full bg-orange-100">
-            <ClockIcon class="h-6 w-6 text-orange-600" />
-          </div>
-          <div class="ml-4">
-            <p class="text-sm font-medium text-gray-500">Due Today</p>
-            <p class="text-2xl font-bold text-gray-900">12</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h2 class="text-lg font-semibold mb-4">Recent Borrowings</h2>
-        <div class="space-y-4"><div v-for="i in 3" :key="i" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
   <div>
-    <p class="font-medium">The Great Gatsby</p>
-    <p class="text-sm text-gray-500">Borrowed by John Doe</p>
-  </div>
-  <span class="text-sm text-gray-500">2 days ago</span>
-</div>
-</div>
-</div>
+    <v-sheet color="primary" class="welcome-banner" rounded>
+      <h1>Welcome to Library Management System</h1>
+      <p>Manage your library's books and borrowings efficiently.</p>
+    </v-sheet>
 
-<div class="bg-white p-6 rounded-lg shadow">
-<h2 class="text-lg font-semibold mb-4">Overdue Books</h2>
-<div class="space-y-4">
-<div v-for="i in 3" :key="i" class="flex items-center justify-between p-4 bg-red-50 rounded-lg">
-  <div>
-    <p class="font-medium">1984</p>
-    <p class="text-sm text-gray-500">Borrowed by Jane Smith</p>
+    <v-row>
+      <v-col cols="12" sm="6" md="3">
+        <v-card class="stat-card">
+          <v-card-text class="text-center">
+            <p class="text-subtitle-1 text-medium-emphasis">Total Books</p>
+            <p class="stat-value">523</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="3">
+        <v-card class="stat-card">
+          <v-card-text class="text-center">
+            <p class="text-subtitle-1 text-medium-emphasis">Books Borrowed</p>
+            <p class="stat-value">48</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="3">
+        <v-card class="stat-card">
+          <v-card-text class="text-center">
+            <p class="text-subtitle-1 text-medium-emphasis">Available Books</p>
+            <p class="stat-value">475</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" sm="6" md="3">
+        <v-card class="stat-card">
+          <v-card-text class="text-center">
+            <p class="text-subtitle-1 text-medium-emphasis">Active Students</p>
+            <p class="stat-value">127</p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-card class="mt-6">
+      <v-card-title>Recent Borrowings</v-card-title>
+      <v-card-text>
+        <v-table>
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Book Title</th>
+              <th>Borrow Date</th>
+              <th>Return Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item, index) in recentBorrowings" :key="index">
+              <td>{{ item.studentId }}</td>
+              <td>{{ item.bookTitle }}</td>
+              <td>{{ item.borrowDate }}</td>
+              <td>{{ item.returnDate }}</td>
+              <td>{{ item.status }}</td>
+            </tr>
+          </tbody>
+        </v-table>
+      </v-card-text>
+    </v-card>
+
+    <v-card class="mt-6">
+      <v-card-title>Recently Added Books</v-card-title>
+      <v-card-text>
+        <v-table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Category</th>
+              <th>Available Copies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(book, index) in recentBooks" :key="index">
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.category }}</td>
+              <td>{{ book.availableCopies }}</td>
+            </tr>
+          </tbody>
+        </v-table>
+      </v-card-text>
+    </v-card>
   </div>
-  <span class="text-sm text-red-600">Overdue 3 days</span>
-</div>
-</div>
-</div>
-</div>
-</div>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+
+const recentBorrowings = ref([
+  {
+    studentId: 'ST101',
+    bookTitle: 'The Great Gatsby',
+    borrowDate: '2025-04-10',
+    returnDate: '2025-04-24',
+    status: 'Borrowed',
+  },
+  {
+    studentId: 'ST105',
+    bookTitle: 'To Kill a Mockingbird',
+    borrowDate: '2025-04-12',
+    returnDate: '2025-04-26',
+    status: 'Borrowed',
+  },
+  {
+    studentId: 'ST098',
+    bookTitle: 'Pride and Prejudice',
+    borrowDate: '2025-04-05',
+    returnDate: '2025-04-19',
+    status: 'Overdue',
+  },
+])
+
+const recentBooks = ref([
+  {
+    title: 'The Algorithm Design Manual',
+    author: 'Steven S. Skiena',
+    category: 'Computer Science',
+    availableCopies: '3',
+  },
+  {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    category: 'Science Fiction',
+    availableCopies: '5',
+  },
+  {
+    title: 'The Lord of the Rings',
+    author: 'J.R.R. Tolkien',
+    category: 'Fantasy',
+    availableCopies: '2',
+  },
+])
+</script>
+
+<style scoped>
+.welcome-banner {
+  padding: 40px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.welcome-banner h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+</style>
