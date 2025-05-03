@@ -4,7 +4,7 @@ import {
   emailValidator,
   passwordValidator,
   confirmedValidator,
-} from '@/utils/validators'
+} from '@/utils/validator'
 import { ref } from 'vue'
 import AlertNotification from '@/components/common/AlertNotification.vue'
 import { supabase, formActionDefault } from '@/utils/supabase'

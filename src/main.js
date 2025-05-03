@@ -1,17 +1,31 @@
+//import './assets/main.css'
+
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createPinia } from 'pinia'
+
+// Vuetify
+// main.js
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+
 import App from './App.vue'
-// Remove or comment out the Dashboard import
-// import Dashboard from './views/auth/DashboardView.vue'
-import Login from './views/auth/LoginView.vue'
-import Register from './views/auth/RegisterView.vue'
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/login', component: Login },
-    { path: '/register', component: Register },
-    // Remove or comment out the Dashboard path
-  ],
+import router from './router'
+
+const app = createApp(App)
+
+const vuetify = createVuetify({
+  icons: {
+    defaultSet: 'mdi', // This is already the default value - only for display purposes
+  },
+  components,
+  directives,
 })
 
-createApp(App).use(router).mount('#app')
+app.use(createPinia())
+app.use(router)
+app.use(vuetify)
+
+app.mount('#app')
