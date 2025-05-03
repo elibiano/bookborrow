@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import Dashboard from './views/auth/DashboardView.vue'
+// Remove or comment out the Dashboard import
+// import Dashboard from './views/auth/DashboardView.vue'
 import Login from './views/auth/LoginView.vue'
 import Register from './views/auth/RegisterView.vue'
 const router = createRouter({
@@ -9,7 +10,7 @@ const router = createRouter({
   routes: [
     { path: '/login', component: Login },
     { path: '/register', component: Register },
-    { path: '/dashboard', component: Dashboard },
+    // Remove or comment out the Dashboard path
   ],
 })
 
