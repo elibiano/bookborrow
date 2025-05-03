@@ -54,7 +54,7 @@ const isPasswordConfirmVisible = ref(false)
           prepend-inner-icon="mdi-lock-outline"
           label="Password"
           :type="isPasswordVisible ? 'text' : 'password'"
-          :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
+          :append-inner-icon="isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append-inner="isPasswordVisible = !isPasswordVisible"
           :rules="[requiredValidator, passwordValidator]"
         ></v-text-field>
@@ -65,7 +65,7 @@ const isPasswordConfirmVisible = ref(false)
           v-model="formData.password_confirmation"
           label="Password Confirmation"
           :type="isPasswordConfirmVisible ? 'text' : 'password'"
-          :append-inner-icon="isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'"
+          :append-inner-icon="isPasswordConfirmVisible ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
           :rules="[
             requiredValidator,
