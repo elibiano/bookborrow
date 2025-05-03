@@ -9,15 +9,10 @@ const { mobile } = useDisplay()
 
 // Load Variables
 const theme = ref(localStorage.getItem('theme') ?? 'light')
-
-// On Theme Update
-const onThemeUpdate = (value) => {
-  theme.value = value
-}
 </script>
 
 <template>
-  <AppLayout :is-with-app-bar-nav-icon="false" @theme="onThemeUpdate">
+  <AppLayout>
     <template #content>
       <v-container class="pa-0" fluid>
         <v-row>
@@ -34,11 +29,13 @@ const onThemeUpdate = (value) => {
               <v-card-title class="text-center">
                 <v-img
                   class="mx-auto"
-                  src="/images/logo-shop.png"
+                  src="/public/images/lbb.png"
                   :width="mobile ? '75%' : '65%'"
                 ></v-img>
 
-                <h3 class="font-weight-black mt-5">Registration</h3>
+                <h3 class="font-weight-black mt-5">BookFlow</h3>
+                <h5 class="font-weight-black mt-5">Library Book Borrowing</h5>
+                <h5 class="font-weight-black mt-5">Registration Form</h5>
               </v-card-title>
 
               <v-card-text class="pt-4">

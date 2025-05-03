@@ -9,15 +9,10 @@ const { mobile } = useDisplay()
 
 // Load Variables
 const theme = ref(localStorage.getItem('theme') ?? 'light')
-
-// On Theme Update
-const onThemeUpdate = (value) => {
-  theme.value = value
-}
 </script>
 
 <template>
-  <AppLayout :is-with-app-bar-nav-icon="false" @theme="onThemeUpdate">
+  <AppLayout>
     <template #content>
       <v-container class="pa-0" fluid>
         <v-row>
@@ -40,6 +35,7 @@ const onThemeUpdate = (value) => {
 
                 <h3 class="font-weight-black mt-5">BookFlow</h3>
                 <h5 class="font-weight-black mt-5">Library Book Borrowing</h5>
+                <h5 class="font-weight-black mt-5">Login Form</h5>
               </v-card-title>
 
               <v-card-text class="pt-4">
@@ -50,8 +46,8 @@ const onThemeUpdate = (value) => {
 
                   <v-divider class="my-5"></v-divider>
 
-                  <h4 class="text-center" v-if="false">
-                    Don't have account?
+                  <h4 class="text-center">
+                    Don't have an account?
                     <RouterLink class="cyan-lighten-3 font-weight-black" to="/register">
                       Click here to Register
                     </RouterLink>
