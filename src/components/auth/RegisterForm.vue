@@ -4,7 +4,7 @@ import {
   emailValidator,
   passwordValidator,
   confirmedValidator,
-} from '@/utils/validators'
+} from '@/utils/validator.js'
 import AlertNotification from '@/components/common/AlertNotification.vue'
 import { useRegister } from '@/composables/auth/register'
 import { ref } from 'vue'
@@ -54,7 +54,7 @@ const isPasswordConfirmVisible = ref(false)
           prepend-inner-icon="mdi-lock-outline"
           label="Password"
           :type="isPasswordVisible ? 'text' : 'password'"
-          :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
+          :append-inner-icon="isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append-inner="isPasswordVisible = !isPasswordVisible"
           :rules="[requiredValidator, passwordValidator]"
         ></v-text-field>

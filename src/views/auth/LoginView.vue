@@ -38,23 +38,25 @@ const onThemeUpdate = (value) => {
                   :width="mobile ? '75%' : '65%'"
                 ></v-img>
 
-                <h3 class="font-weight-black mt-5">LibraryFlow</h3>
+                <h3 class="font-weight-black mt-5">BookFlow</h3>
                 <h5 class="font-weight-black mt-5">Library Book Borrowing</h5>
               </v-card-title>
 
               <v-card-text class="pt-4">
-                <v-divider class="my-5"></v-divider>
+                <v-sheet>
+                  <v-divider class="my-5"></v-divider>
 
-                <LoginForm></LoginForm>
+                  <LoginForm></LoginForm>
 
-                <v-divider class="my-5"></v-divider>
+                  <v-divider class="my-5"></v-divider>
 
-                <h4 class="text-center" v-if="false">
-                  Don't have account?
-                  <RouterLink class="cyan-lighten-3 font-weight-black" to="/register">
-                    Click here to Register
-                  </RouterLink>
-                </h4>
+                  <h4 class="text-center" v-if="false">
+                    Don't have account?
+                    <RouterLink class="cyan-lighten-3 font-weight-black" to="/register">
+                      Click here to Register
+                    </RouterLink>
+                  </h4></v-sheet
+                >
               </v-card-text>
             </v-card>
           </v-col>
