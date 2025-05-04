@@ -48,10 +48,10 @@ const isPasswordVisible = ref(false)
       :loading="formAction.formProcess"
       block
     >
-      <h4 class="text-center">
-        Don't have an account?
-        <RouterLink class="cyan-lighten-3 font-weight-black" to="/dashboard"> Log In </RouterLink>
-      </h4>
+      Log In
     </v-btn>
+    <h4 class="text-center">
+      <RouterLink class="cyan-lighten-3 font-weight-black" to="/dashboard"> </RouterLink>
+    </h4>
   </v-form>
 </template>

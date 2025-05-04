@@ -47,7 +47,7 @@ const theme = ref(localStorage.getItem('theme') ?? 'light')
 
                 <h4 class="text-center">
                   Already have account?
-                  <RouterLink class="cyan-lighten-3 font-weight-black" to="/">
+                  <RouterLink class="cyan-lighten-3 font-weight-black" to="/login">
                     Click here to Login
                   </RouterLink>
                 </h4>
