@@ -31,7 +31,7 @@ onMounted(async () => {
         :color="theme === 'light' ? 'cyan-lighten-1' : 'cyan-lighten-2'"
         border
       >
-        <v-app-bar-title><b>Book Borrow</b></v-app-bar-title>
+        <v-app-bar-title class="text-white"><b>Book Borrow</b></v-app-bar-title>
         <v-spacer></v-spacer>
 
         <ProfileHeader v-if="isLoggedIn"></ProfileHeader>
