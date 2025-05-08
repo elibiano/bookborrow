@@ -6,18 +6,6 @@ export const supabase = createClient(
   import.meta.env.VITE_SUPABASE_ANON_KEY,
 )
 
-// 👉 Create a single supabase admin client for interacting auth users
-export const supabaseAdmin = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_SERVICE_ROLE,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  },
-)
-
 // 👉 Form Action utils
 export const formActionDefault = {
   formProcess: false,

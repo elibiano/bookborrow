@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/auth/LoginView.vue'
 import RegisterView from '@/views/auth/RegisterView.vue'
-import DashboardView from '@/components/system/DashboardView.vue'
-import BooksView from '@/components/system/BooksView.vue' // Make sure this path is correct
+import DashboardView from '@/views/system/DashboardView.vue'
+import BooksView from '@/views/system/BooksView.vue'
+//  Make sure this path is correct
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
