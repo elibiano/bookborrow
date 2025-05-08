@@ -226,7 +226,10 @@ export const useBookStore = defineStore('books', () => {
       
       if (updateBookError) throw updateBookError
       
-      // Refresh books
+      // Explicitly decrease active borrowings count
+      activeBorrowings.value = Math.max(0, activeBorrowings.value - 1)
+      
+      // Refresh books and ensure borrowing count is accurate
       await fetchBooks()
       
       return { success: true }

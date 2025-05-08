@@ -68,7 +68,7 @@ const stats = computed(() => [
   },
   {
     title: 'My Borrowings',
-    value: userBorrowings.value.length,
+    value: userBorrowings.value.filter(borrowing => borrowing.borrow_status === 'borrowed').length,
     icon: 'mdi-account-box',
     color: 'info',
   },
