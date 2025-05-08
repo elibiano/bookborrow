@@ -67,9 +67,7 @@ onMounted(() => {
 
             <div class="text-center mt-6">
               <span class="text-medium-emphasis">Already have an account? </span>
-              <RouterLink class="text-cyan-darken-1 font-weight-medium" to="/">
-                Sign In
-              </RouterLink>
+              <RouterLink class="text-cyan-darken-1 font-weight-medium" to="/"> Log In </RouterLink>
             </div>
           </v-sheet>
         </v-col>
