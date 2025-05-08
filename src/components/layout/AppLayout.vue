@@ -1,11 +1,26 @@
 <script setup>
 import { ref } from 'vue'
+import ProfileHeader from './ProfileHeader.vue'
+import { useAuthUserStore } from '@/stores/userAuthUserStore'
+import { onMounted } from 'vue'
 
-const theme = ref('light')
+// Use Pinia Store
+const authStore = useAuthUserStore()
+
+// Load Variables
+const isLoggedIn = ref(false)
+
+const theme = ref(localStorage.getItem('theme') ?? 'light')
 
 function onClick() {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
+  localStorage.setItem('theme', theme.value)
 }
+
+// Load Functions during component rendering
+onMounted(async () => {
+  isLoggedIn.value = await authStore.isAuthenticated()
+})
 </script>
 
 <template>
@@ -17,6 +32,8 @@ function onClick() {
         border
       >
         <v-spacer></v-spacer>
+
+        <ProfileHeader v-if="isLoggedIn"></ProfileHeader>
 
         <v-btn
           :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
