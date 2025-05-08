@@ -52,7 +52,7 @@ onMounted(async () => {
       </v-main>
 
       <v-footer :color="theme === 'light' ? 'cyan-lighten-1' : 'cyan-lighten-2'" border app>
-        2025 - BookFlow
+        <h3 class="text-white">2025 - BookFlow</h3>
       </v-footer>
     </v-app>
   </v-responsive>
