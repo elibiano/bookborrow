@@ -31,6 +31,7 @@ onMounted(async () => {
         :color="theme === 'light' ? 'cyan-lighten-1' : 'cyan-lighten-2'"
         border
       >
+        <v-app-bar-title><b>Book Borrow</b></v-app-bar-title>
         <v-spacer></v-spacer>
 
         <ProfileHeader v-if="isLoggedIn"></ProfileHeader>
@@ -40,6 +41,7 @@ onMounted(async () => {
           variant="elevated"
           slim
           @click="onClick"
+          class="ml-5"
         ></v-btn>
       </v-app-bar>
 
